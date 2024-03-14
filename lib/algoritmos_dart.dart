@@ -1,13 +1,25 @@
-void main() {
-  
-}
+import 'dart:io';
 
+void main() {
+  verificarMaior();
+}
 
 verificarMaior() {
   /*
 1 - Crie uma função que inicialize dois valores inteiros (A e B). Como resultado, mostre
 na tela qual é o maior valor.
 */
+  List<int> valores = [];
+
+  for (int i = 0; i < 2; i++) {
+    print('Insira o  ${i + 1} º valor:');
+    valores.add(int.parse(stdin.readLineSync()!));
+  }
+
+  String verificar = valores[0] > valores[1]
+      ? 'O 1º valor digitado foi o maior! O valor foi: ${valores[0]}'
+      : 'O 2º valor digitado foi o maior! O valor foi: ${valores[1]}';
+  print(verificar);
 }
 
 verificarABC() {
@@ -15,7 +27,6 @@ verificarABC() {
 2 - Crie uma função que inicialize os valores de A, B, C. 
 * Como resultado, mostre na tela a soma entre A e B e se a soma é maior ou menor do que C. 
 */
-
 }
 
 mostrarFatorial() {
@@ -57,7 +68,7 @@ ganha e mostre na tela o resultado. (Base para o salário mínimo R$ 1.412,00).
 }
 
 verificarInteiros() {
- /*
+  /*
 8. Crie uma função que inicialize três valores inteiros diferentes. Como resultado,
 mostre na tela os valores em ordem decrescente.
 Exemplo: entrada = [5, 6, 1, 9] | saída = [9, 6, 5, 1]
@@ -154,7 +165,7 @@ Resultado = 5
 }
 
 desafioExtra() {
- /*
+  /*
 19. DESAFIO EXTRA
 Desafio não obrigatório para os grupos que tiverem resolvido os desafios
 anteriores e quiserem tentar um desafio a mais.
