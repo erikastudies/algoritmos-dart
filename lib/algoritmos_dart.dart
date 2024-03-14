@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  verificarAB();
+  verificarSalario();
 }
 
 verificarMaior() {
@@ -92,6 +92,9 @@ verificarNumInt() {
 6 - Faça uma função que inicialize um número inteiro qualquer. Como resultado, mostre
 na tela o seu antecessor e o seu sucessor.
 */
+  print('Insira um número Inteiro: ');
+  int n = int.parse(stdin.readLineSync()!);
+  print("Antecessor de $n é ${n - 1}\nSucessor de $n é ${n + 1}");
 }
 
 verificarSalario() {
@@ -100,6 +103,15 @@ verificarSalario() {
 usuário em duas variáveis diferentes. Calcule quantos salários mínimos esse usuário
 ganha e mostre na tela o resultado. (Base para o salário mínimo R$ 1.412,00).
 */
+  List<String> perguntas = ['Qual o valor do salário minimo atual?', 'Qual o valor do seu salário?'];
+  List<double> salario = [];
+
+  for(int i = 0; i < 2; i++) {
+    print(perguntas[i]);
+    salario.add(double.parse(stdin.readLineSync()!));
+  }
+  double qtdSalarios =  salario[1] / salario[0];
+  print("Você recebe ${qtdSalarios.toInt()} salarios minimos.");
 }
 
 verificarInteiros() {
