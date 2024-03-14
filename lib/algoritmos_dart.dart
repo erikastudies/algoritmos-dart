@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  verificarABC();
+  verificarAB();
 }
 
 verificarMaior() {
@@ -40,11 +40,6 @@ verificarABC() {
       : 'A soma de A = ${valores[0]} e B = ${valores[1]} é menor que o valor de C = ${valores[2]}!';
 
   print(mensagem);
-
-  /* String verificar = valores[0] > valores[1]
-      ? 'O 1º valor digitado foi o maior! O valor foi: ${valores[0]}'
-      : 'O 2º valor digitado foi o maior! O valor foi: ${valores[1]}';
-  print(verificar); */
 }
 
 mostrarFatorial() {
@@ -59,20 +54,42 @@ parOuImpar() {
 4 -Crie uma função que inicialize um número qualquer. Como resultado, mostre na tela
 se o número é par ou ímpar e positivo ou negativo.
 */
+  print('Insita um número inteiro: ');
+  int num = int.parse(stdin.readLineSync()!);
+
+  String verificarParOuImpar =
+      num % 2 == 0 && num > 0 ? 'O número $num é Par' : 'O número $num é Impar';
+
+  String verificarPositivo = num >= 0 ? 'positivo' : 'negativo';
+  print("$verificarParOuImpar e $verificarPositivo");
 }
 
 verificarAB() {
 /*
-Faça uma função que inicialize dois valores inteiros A e B. Se os valores de A e B
+5 - Faça uma função que inicialize dois valores inteiros A e B. Se os valores de A e B
 forem iguais, deverá somar os dois valores, caso contrário deverá multiplicar A por B.
 Ao final de qualquer um dos cálculos deve-se atribuir o resultado a uma variável e
 mostrar seu valor na tela.
 */
+  List<int> valores = [];
+
+  for (int i = 0; i < 2; i++) {
+    print('Digite o valor $i:');
+    valores.add(int.parse(stdin.readLineSync()!));
+  }
+  int soma = valores[0] + valores[1];
+  int mult = valores[0] * valores[1];
+
+  String verificarAB = (valores[0] == valores[1])
+      ? "A soma dos valores é $soma"
+      : 'A Multiplicação dos valores é $mult ';
+
+  print(verificarAB);
 }
 
 verificarNumInt() {
 /*
-Faça uma função que inicialize um número inteiro qualquer. Como resultado, mostre
+6 - Faça uma função que inicialize um número inteiro qualquer. Como resultado, mostre
 na tela o seu antecessor e o seu sucessor.
 */
 }
