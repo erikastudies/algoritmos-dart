@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  verificarMaior();
+  verificarABC();
 }
 
 verificarMaior() {
@@ -27,6 +27,24 @@ verificarABC() {
 2 - Crie uma função que inicialize os valores de A, B, C. 
 * Como resultado, mostre na tela a soma entre A e B e se a soma é maior ou menor do que C. 
 */
+  List<int> valores = [];
+
+  for (int i = 0; i < 3; i++) {
+    print('Insira o  ${i + 1} º valor:');
+    valores.add(int.parse(stdin.readLineSync()!));
+  }
+
+  int soma = valores[0] + valores[1];
+  String mensagem = soma > valores[2]
+      ? 'A soma de A = ${valores[0]} e B = ${valores[1]} é maior que o valor de C = ${valores[2]}!'
+      : 'A soma de A = ${valores[0]} e B = ${valores[1]} é menor que o valor de C = ${valores[2]}!';
+
+  print(mensagem);
+
+  /* String verificar = valores[0] > valores[1]
+      ? 'O 1º valor digitado foi o maior! O valor foi: ${valores[0]}'
+      : 'O 2º valor digitado foi o maior! O valor foi: ${valores[1]}';
+  print(verificar); */
 }
 
 mostrarFatorial() {
